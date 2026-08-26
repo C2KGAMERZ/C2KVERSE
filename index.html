@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+w<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -193,3 +193,51 @@ nav a:hover{
 
     <div class="card" data-type="map" data-name="survival island">
       <div class="th
+<footer>
+  © 2026 C2KVerse • Minecraft Bedrock Community
+</footer>
+
+<script>
+
+function filterCards(type,btn){
+
+  document.querySelectorAll(".categories button")
+    .forEach(b => b.classList.remove("active"));
+
+  btn.classList.add("active");
+
+  document.querySelectorAll(".card")
+    .forEach(card => {
+
+      card.classList.toggle(
+        "hidden",
+        type !== "all" && card.dataset.type !== type
+      );
+
+    });
+}
+
+
+function searchCards(){
+
+  let q = document
+    .getElementById("search")
+    .value
+    .toLowerCase()
+    .trim();
+
+  document.querySelectorAll(".card")
+    .forEach(card => {
+
+      card.classList.toggle(
+        "hidden",
+        q !== "" && !card.dataset.name.includes(q)
+      );
+
+    });
+}
+
+</script>
+
+</body>
+</html>
