@@ -2,26 +2,194 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>C2KVerse - Minecraft Bedrock</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>C2KVerse | Minecraft Bedrock</title>
 
 <style>
-*{box-sizing:border-box}
-body{margin:0;background:#0d120e;color:#eee;font-family:Arial,sans-serif}
-header{background:#151d16;border-bottom:2px solid #49c653;padding:18px}
-.top{max-width:1100px;margin:auto;display:flex;align-items:center;justify-content:space-between;gap:15px}
-.logo{font-size:28px;font-weight:bold;color:#62e86b}
-nav a{color:#ddd;text-decoration:none;margin:0 8px}
-.hero{padding:35px 15px;text-align:center;background:linear-gradient(135deg,#162218,#0d120e)}
-.hero h1{font-size:36px;margin:5px}
-.hero span{color:#62e86b}
-.search{max-width:650px;margin:20px auto;display:flex}
-.search input{flex:1;padding:14px;border:0;border-radius:8px 0 0 8px;font-size:16px}
-.search button{padding:14px 20px;border:0;background:#49c653;font-weight:bold;border-radius:0 8px 8px 0}
-.categories{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;padding:18px}
-.categories button{background:#202a21;color:white;border:1px solid #3d4d3e;padding:10px 16px;border-radius:20px}
-.categories button.active,.categories button:hover{background:#49c653;color:#071008}
-.container{max-width:1100px;margin:auto;padding:10px 15px}
-.title{color:#62e86b}
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
+
+body{
+  background:#101410;
+  color:#eee;
+  font-family:Arial,sans-serif;
+}
+
+header{
+  background:#171c17;
+  border-bottom:2px solid #49c653;
+  padding:16px;
+}
+
+.top{
+  max-width:1100px;
+  margin:auto;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:15px;
+}
+
+.logo{
+  font-size:28px;
+  font-weight:bold;
+  color:#62e86b;
+}
+
+nav a{
+  color:#ddd;
+  text-decoration:none;
+  margin:0 8px;
+}
+
+nav a:hover{
+  color:#62e86b;
+}
+
+.hero{
+  padding:45px 15px;
+  text-align:center;
+  background:linear-gradient(135deg,#1b3220,#101410);
+}
+
+.hero h1{
+  font-size:40px;
+  margin-bottom:10px;
+}
+
+.hero h1 span{
+  color:#62e86b;
+}
+
+.hero p{
+  color:#aaa;
+  margin-bottom:25px;
+}
+
+.search{
+  max-width:700px;
+  margin:auto;
+  display:flex;
+}
+
+.search input{
+  flex:1;
+  padding:15px;
+  border:0;
+  outline:none;
+  font-size:16px;
+  border-radius:8px 0 0 8px;
+}
+
+.search button{
+  padding:15px 22px;
+  border:0;
+  background:#49c653;
+  font-weight:bold;
+  border-radius:0 8px 8px 0;
+}
+
+.categories{
+  display:flex;
+  gap:10px;
+  justify-content:center;
+  flex-wrap:wrap;
+  padding:20px 15px;
+}
+
+.categories button{
+  background:#202a21;
+  color:white;
+  border:1px solid #3d4d3e;
+  padding:11px 17px;
+  border-radius:22px;
+}
+
+.categories button:
+  .container{max-width:1100px;margin:auto;padding:10px 15px 50px}
 .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px}
-.card{background:#171e18;border:1px solid #29352a;border-radius:12px;overflow:hidd
+.card{background:#171e18;border:1px solid #29352a;border-radius:12px;overflow:hidden}
+.thumb{height:160px;background:#315b35;display:flex;align-items:center;justify-content:center;font-size:65px}
+.info{padding:15px}
+.tag{font-size:12px;color:#62e86b}
+.card h3{margin:7px 0}
+.desc{color:#aaa;font-size:14px}
+.meta{color:#999;font-size:13px;margin:10px 0}
+.open{display:inline-block;background:#49c653;color:#061007;text-decoration:none;padding:10px 14px;border-radius:7px;font-weight:bold}
+.hidden{display:none}
+  </head>
+
+<body>
+
+<header>
+  <div class="top">
+    <div class="logo">⛏️ C2KVerse</div>
+
+    <nav>
+      <a href="#">Home</a>
+      <a href="#content">Addons</a>
+      <a href="#content">Maps</a>
+      <a href="#content">Skins</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+
+  <h1>Welcome to <span>C2KVerse</span></h1>
+
+  <p>Minecraft Bedrock Addons, Maps & Skins</p>
+
+  <div class="search">
+    <input
+      id="search"
+      placeholder="Search addons, maps, skins..."
+      onkeyup="searchCards()"
+    >
+    <button onclick="searchCards()">🔍 Search</button>
+  </div>
+
+</section>
+
+<div class="categories">
+
+  <button class="active" onclick="filterCards('all',this)">
+    ⭐ All
+  </button>
+
+  <button onclick="filterCards('addon',this)">
+    🧩 Addons
+  </button>
+
+  <button onclick="filterCards('map',this)">
+    🗺️ Maps
+  </button>
+
+  <button onclick="filterCards('skin',this)">
+    👕 Skins
+  </button>
+
+</div>
+
+<main class="container" id="content">
+
+  <h2 class="title">🔥 Latest Content</h2>
+
+  <div class="grid">
+
+    <div class="card" data-type="addon" data-name="dragon addon">
+      <div class="thumb">🐉</div>
+      <div class="info">
+        <div class="tag">ADDON</div>
+        <h3>Dragon Addon</h3>
+        <p class="desc">Explore a fantasy world with powerful dragons.</p>
+        <div class="meta">⭐ 4.8</div>
+        <a class="open" href="#">View Addon →</a>
+      </div>
+    </div>
+
+    <div class="card" data-type="map" data-name="survival island">
+      <div class="th
