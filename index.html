@@ -158,7 +158,8 @@
 
  <div class="search-box">
   <input type="text" id="addonSearch" placeholder="🔍 Search addons...">
-</div> 
+  <button id="searchButton">🔍 Search</button>
+</div>
   
   <h2>🔥 Latest Addons</h2>
 
@@ -195,22 +196,23 @@ Bedrock content website.</p>
 
   <script>
   const searchInput = document.getElementById("addonSearch");
+  const searchButton = document.getElementById("searchButton");
   const addonCards = document.querySelectorAll(".addon-card");
 
-  searchInput.addEventListener("input", function () {
-    const searchText = this.value.toLowerCase();
+  searchButton.addEventListener("click", function () {
+    const searchText = searchInput.value.toLowerCase().trim();
 
     addonCards.forEach(function (card) {
-      const addonName = card.querySelector("h3").textContent.toLowerCase();
+      const addonText = card.textContent.toLowerCase();
 
-      if (addonName.includes(searchText)) {
+      if (searchText === "" || addonText.includes(searchText)) {
         card.style.display = "";
       } else {
         card.style.display = "none";
       }
     });
   });
-</script>
+</script>  
   
 </body>
 </html>
