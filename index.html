@@ -70,6 +70,55 @@
   color:#aaa;
   line-height:1.5;
 }
+
+.addon-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.addon-card {
+  background: #1a1a1a;
+  border: 1px solid #333;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.35);
+  text-align: left;
+}
+
+.addon-card img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  display: block;
+}
+
+.addon-info {
+  padding: 15px;
+}
+
+.addon-info h3 {
+  margin: 0 0 8px;
+  font-size: 20px;
+}
+
+.addon-info p {
+  color: #aaa;
+  line-height: 1.5;
+  margin: 0 0 15px;
+}
+
+.addon-info button {
+  width: 100%;
+  padding: 11px;
+  border: none;
+  border-radius: 7px;
+  background: #35a853;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+}    
   </style>
 </head>
 
