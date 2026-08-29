@@ -195,44 +195,28 @@
       </div>
     </div>
 
-    <div class="addon-card">
-      <img src="https://placehold.co/600x350/png?text=Epic+Weapons" alt="Epic Weapons">
+<script>
+const searchInput = document.getElementById("addonSearch");
+const searchButton = document.getElementById("searchButton");
+const addonCards = document.querySelectorAll(".addon-card");
 
-      <div class="addon-info">
-        <h3>Epic Weapons</h3>
-        <p>Powerful new weapons for Minecraft Bedrock!</p>
-        <button>Download</button>
-      </div>
-    </div>
+searchInput.addEventListener("input", function () {
+  searchInput.parentElement.classList.toggle(
+    "has-text",
+    searchInput.value.trim() !== ""
+  );
+});
 
-  </div>
+searchButton.addEventListener("click", function () {
+  const searchText = searchInput.value.toLowerCase().trim();
 
-</div>
-
-Bedrock content website.</p>
-  <button>🧩 Browse Addons</button>
-</div>
-
-
-  <script>
-  const searchInput = document.getElementById("addonSearch");
-  const searchButton = document.getElementById("searchButton");
-  const addonCards = document.querySelectorAll(".addon-card");
-
-  searchButton.addEventListener("click", function () {
-    const searchText = searchInput.value.toLowerCase().trim();
-
-    addonCards.forEach(function (card) {
-      const addonText = card.textContent.toLowerCase();
-
-      if (searchText === "" || addonText.includes(searchText)) {
-        card.style.display = "";
-      } else {
-        card.style.display = "none";
-      }
-    });
+  addonCards.forEach(function (card) {
+    const text = card.textContent.toLowerCase();
+    card.style.display =
+      searchText === "" || text.includes(searchText) ? "" : "none";
   });
-</script>  
+});
+</script>
   
 </body>
 </html>
