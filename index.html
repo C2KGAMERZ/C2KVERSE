@@ -119,6 +119,32 @@
   font-size: 16px;
   font-weight: bold;
 }    
+
+.search-box {
+  margin-bottom: 20px;
+}
+
+.search-box input {
+  width: 90%;
+  max-width: 600px;
+  padding: 14px 18px;
+  border: 1px solid #3b4a3c;
+  border-radius: 10px;
+  background: #111811;
+  color: white;
+  font-size: 16px;
+  outline: none;
+  box-sizing: border-box;
+}
+
+.search-box input::placeholder {
+  color: #888;
+}
+
+.search-box input:focus {
+  border-color: #49c653;
+}
+    
   </style>
 </head>
 
@@ -130,6 +156,10 @@
 </header>
 <div class="box">
 
+ <div class="search-box">
+  <input type="text" id="addonSearch" placeholder="🔍 Search addons...">
+</div> 
+  
   <h2>🔥 Latest Addons</h2>
 
   <div class="addon-grid">
