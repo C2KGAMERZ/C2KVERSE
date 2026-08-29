@@ -193,5 +193,25 @@ Bedrock content website.</p>
   <button>🧩 Browse Addons</button>
 </div>
 
+
+  <script>
+  const searchInput = document.getElementById("addonSearch");
+  const addonCards = document.querySelectorAll(".addon-card");
+
+  searchInput.addEventListener("input", function () {
+    const searchText = this.value.toLowerCase();
+
+    addonCards.forEach(function (card) {
+      const addonName = card.querySelector("h3").textContent.toLowerCase();
+
+      if (addonName.includes(searchText)) {
+        card.style.display = "";
+      } else {
+        card.style.display = "none";
+      }
+    });
+  });
+</script>
+  
 </body>
 </html>
