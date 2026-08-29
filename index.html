@@ -144,6 +144,26 @@
 .search-box input:focus {
   border-color: #49c653;
 }
+
+<script>
+  const searchInput = document.getElementById("addonSearch");
+  const searchButton = document.getElementById("searchButton");
+  const addonCards = document.querySelectorAll(".addon-card");
+
+  searchButton.addEventListener("click", function () {
+    const searchText = searchInput.value.toLowerCase().trim();
+
+    addonCards.forEach(function (card) {
+      const addonText = card.textContent.toLowerCase();
+
+      if (searchText === "" || addonText.includes(searchText)) {
+        card.style.display = "";
+      } else {
+        card.style.display = "none";
+      }
+    });
+  });
+</script>
     
   </style>
 </head>
