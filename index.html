@@ -200,19 +200,18 @@ const searchButton = document.getElementById("searchButton");
 const addonCards = document.querySelectorAll(".addon-card");
 
 searchInput.addEventListener("input", function () {
-  searchInput.parentElement.classList.toggle(
-    "has-text",
-    searchInput.value.trim() !== ""
-  );
+  searchButton.style.display =
+    searchInput.value.trim() !== "" ? "inline-block" : "none";
 });
 
 searchButton.addEventListener("click", function () {
   const searchText = searchInput.value.toLowerCase().trim();
 
   addonCards.forEach(function (card) {
-    const text = card.textContent.toLowerCase();
+    const addonText = card.textContent.toLowerCase();
+
     card.style.display =
-      searchText === "" || text.includes(searchText) ? "" : "none";
+      addonText.includes(searchText) ? "" : "none";
   });
 });
 </script>
