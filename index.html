@@ -219,10 +219,14 @@ searchInput.addEventListener("input", function () {
 });
 
 searchButton.addEventListener("click", function () {
-  const searchText = searchInput.value.toLowerCase().trim();
+  const searchText = searchInput.value
+    .toLowerCase()
+    .replace(/[^a-z0-9]/g, "");
 
   addonCards.forEach(function (card) {
-    const addonText = card.textContent.toLowerCase();
+    const addonText = card.textContent
+      .toLowerCase()
+      .replace(/[^a-z0-9]/g, "");
 
     card.style.display =
       addonText.includes(searchText) ? "" : "none";
