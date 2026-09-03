@@ -1,37 +1,166 @@
-<!DOCTYPE html><html><head>
-<title>C2KVerse</title>
+<!DOCTYPE html>
+<html>
+<head>
+<title>C2KVerse - Addons</title>
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <style>
 *{box-sizing:border-box}
-body{margin:0;color:#fff;font-family:Arial;
-background:linear-gradient(#0008,#000b),url("YOUR-MINECRAFT-BG");
-background-size:cover;background-attachment:fixed}
-header{text-align:center;padding:20px;background:#142018dd;border-bottom:3px solid #49c653}
-h1{margin:0;color:#62e86b;font-size:34px;
-font-family:monospace;font-weight:900;text-shadow:3px 3px #000}
-header p{margin:6px;color:#ccc}
-.box{max-width:900px;margin:20px auto;padding:15px}
-.search{width:100%;padding:13px;border:2px solid #49c653;border-radius:9px;background:#111d;color:#fff}
-.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-top:20px}
-.card{background:#111d;border:2px solid #315b35;border-radius:12px;overflow:hidden}
-.card img{width:100%;height:150px;object-fit:cover}
-.info{padding:14px}
-h2{color:#62e86b;font-size:20px}
-p{color:#bbb;line-height:1.4}
-.btn{display:block;padding:11px;text-align:center;background:#49c653;color:#071008;text-decoration:none;font-weight:bold;border-radius:7px}
-</style></head><body>
-<header><h1>⛏ C2KVERSE</h1><p>MINECRAFT ADDONS & SKINS</p></header>
-<div class="box"><input class="search" id="s" placeholder="🔍 Search addons...">
+body{
+margin:0;
+font-family:Arial,sans-serif;
+color:white;
+background:#69c7ff;
+min-height:100vh;
+overflow-x:hidden
+}
+.bg{
+position:fixed;
+inset:0;
+z-index:-1;
+overflow:hidden;
+background:linear-gradient(#69c7ff 0 58%,#72a83e 58%)
+}
+.sun{
+position:absolute;
+width:70px;height:70px;
+background:#fff27a;
+right:12%;top:10%
+}
+.cloud{
+position:absolute;
+width:180px;height:35px;
+background:#fff;
+opacity:.8;
+top:18%;left:8%
+}
+.cloud2{top:30%;left:65%;transform:scale(.7)}
+.hill{
+position:absolute;
+bottom:32%;
+width:55%;height:25%;
+background:#568832;
+clip-path:polygon(0 100%,0 65%,25% 35%,45% 60%,65% 20%,100% 55%,100% 100%)
+}
+.hill2{right:0;transform:scaleX(-1)}
+.house{
+position:absolute;
+bottom:27%;
+width:110px;height:75px;
+background:#a87543;
+border:5px solid #51331f
+}
+.house:before{
+content:"";
+position:absolute;
+left:-12px;top:-45px;
+border-left:65px solid transparent;
+border-right:65px solid transparent;
+border-bottom:45px solid #704126
+}
+.house:after{
+content:"";
+position:absolute;
+width:22px;height:35px;
+background:#4a2b1b;
+bottom:0;left:40px
+}
+.h1{left:12%}.h2{right:13%;transform:scale(.8)}
+header{
+text-align:center;
+padding:22px 10px;
+background:#101810dd;
+border-bottom:3px solid #55d85c
+}
+h1{
+margin:0;
+font-family:monospace;
+font-size:38px;
+font-weight:900;
+letter-spacing:3px;
+color:#67e86d;
+text-shadow:4px 4px #000
+}
+header p{margin:6px 0;color:#ddd}
+.box{max-width:850px;margin:25px auto;padding:12px}
+.grid{
+display:grid;
+grid-template-columns:repeat(2,minmax(0,1fr));
+gap:18px
+}
+.card{
+background:#101810ee;
+border:2px solid #3e7943;
+border-radius:10px;
+overflow:hidden;
+box-shadow:0 5px 15px #0008
+}
+.card img{
+width:100%;
+height:130px;
+object-fit:cover;
+display:block
+}
+.info{padding:12px}
+h2{
+margin:0 0 7px;
+font-size:19px;
+color:#69e86e
+}
+.info p{margin:5px 0;color:#ccc;font-size:14px}
+.btn{
+display:block;
+margin-top:11px;
+padding:9px;
+text-align:center;
+background:#4dcc55;
+color:#071007;
+text-decoration:none;
+font-weight:bold;
+border-radius:6px
+}
+.btn:hover{background:#70ee76}
+</style>
+</head>
+
+<body>
+
+<div class="bg">
+<div class="sun"></div>
+<div class="cloud"></div>
+<div class="cloud cloud2"></div>
+<div class="hill"></div>
+<div class="hill hill2"></div>
+<div class="house h1"></div>
+<div class="house h2"></div>
+</div>
+
+<header>
+<h1>⛏ C2KVERSE</h1>
+<p>MINECRAFT ADDONS & SKINS</p>
+</header>
+
+<div class="box">
 <div class="grid">
-<div class="card"><img src="YOUR-IMAGE-URL"><div class="info">
-<h2>Bedrock Essentials+</h2><p>All-in-one survival utilities.</p>
-<a class="btn" href="YOUR-DOWNLOAD-LINK">⬇ Download</a></div></div>
+<div class="card">
+<img src="YOUR-IMAGE-URL" alt="Bedrock Essentials+">
+<div class="info">
+<h2>Bedrock Essentials+</h2>
+<p>All-in-one survival utilities for Minecraft Bedrock.</p>
+<a class="btn" href="YOUR-DOWNLOAD-LINK">⬇ Download</a>
+</div>
+</div>
 
-<div class="card"><img src="YOUR-OFFHAND-IMAGE-URL"><div class="info">
-<h2>Off Hand</h2><p>Off Hand feature for Bedrock.</p>
-<a class="btn" href="YOUR-OFFHAND-DOWNLOAD-LINK">⬇ Download</a></div></div>
+<div class="card">
+<img src="YOUR-OFFHAND-IMAGE-URL" alt="Off Hand">
+<div class="info">
+<h2>Off Hand</h2>
+<p>Adds an Off Hand feature to Minecraft Bedrock.</p>
+<a class="btn" href="YOUR-OFFHAND-DOWNLOAD-LINK">⬇ Download</a>
+</div>
+</div>
 
-</div></div>
-<script>
-s.oninput=()=>document.querySelectorAll(".card").forEach(x=>x.style.display=x.innerText.toLowerCase().includes(s.value.toLowerCase())?"block":"none");
-</script></body></html>
+</div>
+</div>
+
+</body>
+</html>
