@@ -13,233 +13,124 @@
   box-sizing:border-box;
 }
 
+html,body{
+  width:100%;
+  min-height:100%;
+  background:#000;
+}
+
 body{
-  font-family:Arial,sans-serif;
-  color:white;
-  min-height:100vh;
-  background:
-    linear-gradient(rgba(5,10,6,.72),rgba(5,10,6,.88)),
-    url("https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=1600&q=80")
-    center/cover fixed;
+  display:flex;
+  justify-content:center;
+  overflow-x:hidden;
 }
 
-header{
-  text-align:center;
-  padding:45px 15px 30px;
-  border-bottom:2px solid #55d85c;
+.home{
+  position:relative;
+  width:100%;
+  max-width:1024px;
 }
 
-.logo{
-  font-family:Impact,Arial Black,sans-serif;
-  font-size:55px;
-  letter-spacing:4px;
-  color:#66e66c;
-  text-shadow:3px 3px 0 #111;
+.home img{
+  display:block;
+  width:100%;
+  height:auto;
 }
 
-.subtitle{
-  margin2-top:10px;
-  font-size:15px;
-  font-weight:bold;
-  letter-spacing:2px;
+.link{
+  position:absolute;
+  display:block;
+  z-index:5;
+}
+.link-subscribe{
+  left:33%;
+  top:56.5%;
+  width:34%;
+  height:5.5%;
 }
 
-.container{
-  width:92%;
-  max-width:1000px;
-  margin:auto;
-}
-.hero{
-  text-align:center;
-  padding:55px 15px 35px;
+.link-addons{
+  left:3.5%;
+  top:66%;
+  width:21.5%;
+  height:24%;
 }
 
-.hero h2{
-  font-family:Impact,Arial Black,sans-serif;
-  font-size:38px;
-  letter-spacing:2px;
-  text-shadow:3px 3px 0 #111;
+.link-skins{
+  left:27%;
+  top:66%;
+  width:21.5%;
+  height:24%;
 }
 
-.hero p{
-  margin:12px 0 22px;
-  color:#ddd;
-  font-weight:bold;
+.link-textures{
+  left:50.5%;
+  top:66%;
+  width:21.5%;
+  height:24%;
 }
 
-.subscribe-btn{
-  display:inline-block;
-  padding:14px 28px;
-  background:#55d85c;
-  color:#071007;
-  text-decoration:none;
-  font-weight:bold;
-  border-radius:8px;
-  box-shadow:0 4px 0 #27842d;
+.link-maps{
+  left:74.5%;
+  top:66%;
+  width:21.5%;
+  height:24%;
 }
 
-.subscribe-btn:active{
-  transform:translateY(3px);
-  box-shadow:0 1px 0 #27842d;
+.link-youtube{
+  left:37.5%;
+  top:93.5%;
+  width:6%;
+  height:4%;
 }
 
-.categories{
-  display:grid;
-  grid-template-columns:repeat(2,1fr);
-  gap:18px;
-  margin:20px 0 50px;
+.link-instagram{
+  left:47%;
+  top:93.5%;
+  width:6%;
+  height:4%;
 }
 
-.category{
-  min-height:150px;
-  padding:25px 15px;
-  background:rgba(15,20,15,.88);
-  border:2px solid #3f9e45;
-  border-radius:12px;
-  text-align:center;
-  text-decoration:none;
-  color:white;
-  transition:.2s;
+.link-discord{
+  left:56.5%;
+  top:93.5%;
+  width:6%;
+  height:4%;
 }
 
-.category:hover{
-  transform:translateY(-4px);
-  border-color:#66e66c;
-}
-
-.category .icon{
-  font-size:45px;
-  margin-bottom:12px;
-}
-
-.category h3{
-  font-size:20px;
-  letter-spacing:1px;
-}
-
-.category p{
-  margin-top:7px;
-  color:#aaa;
-  font-size:13px;
-}
 </style>
 </head>
 
 <body>
 
-<header>
-  <div class="logo">C2KVERSE</div>
-  <div class="subtitle">MINECRAFT. MODS. ADDONS. SKINS & MORE!</div>
-</header>
+<div class="home">
 
-<div class="container">
+  <img src="hp.jpg" alt="C2KVerse Home">
 
-<section class="hero">
-  <h2>C2K GAMERZ</h2>
-  <p>Welcome to C2KVerse — your Minecraft world starts here!</p>
+  <a class="link link-subscribe"
+     href="https://www.youtube.com/@CREEPERX2K"
+     target="_blank"></a>
 
-  <a href="https://www.youtube.com/@CREEPERX2K"
-     target="_blank"
-     class="subscribe-btn">
-     🔔 SUBSCRIBE
-  </a>
-</section>
+  <a class="link link-addons"
+     href="addon.html"></a>
 
-<section class="categories">
+  <a class="link link-skins" href="#"></a>
 
-  <a href="addon.html" class="category">
-    <div class="icon">🧩</div>
-    <h3>ADDONS</h3>
-    <p>Discover amazing Minecraft addons</p>
-  </a>
+  <a class="link link-textures" href="#"></a>
 
-  <a href="#" class="category">
-    <div class="icon">👕</div>
-    <h3>SKINS</h3>
-    <p>Cool Minecraft skins</p>
-  </a>
+  <a class="link link-maps" href="#"></a>
 
-  <a href="#" class="category">
-    <div class="icon">🖼️</div>
-    <h3>TEXTURES</h3>
-    <p>Upgrade your Minecraft world</p>
-  </a>
+  <a class="link link-youtube"
+     href="https://www.youtube.com/@CREEPERX2K"
+     target="_blank"></a>
 
-  <a href="#" class="category">
-    <div class="icon">🗺️</div>
-    <h3>MAPS</h3>
-    <p>Explore new Minecraft maps</p>
-  </a>
+  <a class="link link-instagram" href="#"></a>
 
-</section>
-<section class="connect">
-  <h2>CONNECT WITH ME</h2>
-
-  <a href="https://www.youtube.com/@CREEPERX2K"
-     target="_blank">
-     ▶️ YouTube
-  </a>
-</section>
+  <a class="link link-discord" href="#"></a>
 
 </div>
 
-<footer>
-  © 2025 C2KVERSE – All Rights Reserved.
-</footer>
-
-<style>
-.connect{
-  text-align:center;
-  padding:10px 15px 45px;
-}
-
-.connect h2{
-  font-family:Impact,Arial Black,sans-serif;
-  letter-spacing:2px;
-  margin-bottom:20px;
-}
-
-.connect a{
-  display:inline-block;
-  padding:12px 22px;
-  border:1px solid #55d85c;
-  border-radius:8px;
-  color:#66e66c;
-  text-decoration:none;
-  font-weight:bold;
-}
-
-footer{
-  text-align:center;
-  padding:20px 10px;
-  border-top:1px solid #333;
-  color:#888;
-  font-size:12px;
-}
-
-@media(max-width:600px){
-  .logo{
-    font-size:43px;
-  }
-
-  .hero h2{
-    font-size:31px;
-  }
-
-  .categories{
-    gap:12px;
-  }
-
-  .category{
-    min-height:135px;
-    padding:20px 10px;
-  }
-
-  .category .icon{
-    font-size:38px;
-  }
-}
-</style>
-
 </body>
 </html>
+
+
