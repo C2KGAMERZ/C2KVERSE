@@ -3,7 +3,6 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>C2KVerse - Addons</title>
 
 <style>
@@ -17,27 +16,23 @@ body{
   font-family:Arial,sans-serif;
   color:white;
   min-height:100vh;
-  background:
-    linear-gradient(rgba(10,12,10,.65),rgba(10,12,10,.88)),
-    url("https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=1600&q=80")
-    center/cover fixed;
+  background:#111;
 }
-
 header{
   text-align:center;
   padding:35px 15px 25px;
-  background:rgba(10,10,10,.55);
-  border-bottom:2px solid #777;
+  background:rgba(10,10,10,.65);
+  border-bottom:2px solid #555;
 }
 
 .logo{
   font-family:Impact,Arial Black,sans-serif;
   font-size:48px;
   letter-spacing:4px;
-  color:#fff;
+  color:white;
   text-shadow:
     3px 3px 0 #111,
-    0 0 8px rgba(255,255,255,.25);
+    0 0 10px rgba(255,255,255,.3);
 }
 
 .subtitle{
@@ -60,20 +55,19 @@ header{
 .search-box input{
   width:100%;
   padding:15px 20px;
-  border:1px solid #777;
+  border:1px solid #666;
   border-radius:10px;
   outline:none;
   background:rgba(20,20,20,.9);
-  color:#fff;
+  color:white;
   font-size:16px;
   box-shadow:0 4px 15px rgba(0,0,0,.4);
 }
 
 .search-box input:focus{
-  border-color:#bbb;
+  border-color:#aaa;
   box-shadow:0 0 12px rgba(255,255,255,.15);
 }
-
 .grid{
   display:grid;
   grid-template-columns:repeat(2,1fr);
@@ -81,7 +75,7 @@ header{
 }
 
 .card{
-  background:rgba(18,18,18,.92);
+  background:rgba(18,18,18,.94);
   border:1px solid #555;
   border-radius:12px;
   overflow:hidden;
@@ -109,7 +103,6 @@ header{
   font-size:14px;
   line-height:1.5;
 }
-
 .btn{
   display:inline-block;
   margin-top:15px;
@@ -131,7 +124,7 @@ header{
   color:#aaa;
   padding:30px;
   font-size:16px;
-}
+}  
 </style>
 </head>
 
@@ -149,63 +142,76 @@ header{
       type="text"
       id="addonSearch"
       placeholder="🔍 Search addons..."
-      autocomplete="off">
+      autocomplete="off"
+    >
   </div>
-
-  <div class="grid" id="addonGrid">
+<div class="grid" id="addonGrid">
 
     <div class="card" data-name="Bedrock Essentials+">
       <img src="YOUR-IMAGE-URL" alt="Bedrock Essentials+">
+
       <div class="info">
         <h2>Bedrock Essentials+</h2>
-        <p>Useful features and improvements for Minecraft Bedrock.</p>
-        <a class="btn" href="YOUR-DOWNLOAD-LINK">⬇️ Download</a>
+
+        <p>
+          Useful features and improvements for Minecraft Bedrock.
+        </p>
+
+        <a class="btn" href="YOUR-DOWNLOAD-LINK">
+          ⬇️ Download
+        </a>
       </div>
     </div>
 
     <div class="card" data-name="Off Hand">
       <img src="YOUR-IMAGE-URL" alt="Off Hand">
+
       <div class="info">
         <h2>Off Hand</h2>
-        <p>Add useful off-hand features to your Minecraft Bedrock world.</p>
-        <a class="btn" href="YOUR-DOWNLOAD-LINK">⬇️ Download</a>
+
+        <p>
+          Add useful off-hand features to your Minecraft Bedrock world.
+        </p>
+
+        <a class="btn" href="YOUR-DOWNLOAD-LINK">
+          ⬇️ Download
+        </a>
+      </div>
+    </div>
+<div class="grid" id="addonGrid">
+
+    <div class="card" data-name="Bedrock Essentials+">
+      <img src="YOUR-IMAGE-URL" alt="Bedrock Essentials+">
+
+      <div class="info">
+        <h2>Bedrock Essentials+</h2>
+
+        <p>
+          Useful features and improvements for Minecraft Bedrock.
+        </p>
+
+        <a class="btn" href="YOUR-DOWNLOAD-LINK">
+          ⬇️ Download
+        </a>
       </div>
     </div>
 
-  </div>
+    <div class="card" data-name="Off Hand">
+      <img src="YOUR-IMAGE-URL" alt="Off Hand">
 
-  <div class="no-results" id="noResults">
-    No addons found 😕
-  </div>
+      <div class="info">
+        <h2>Off Hand</h2>
 
-</div>
- <script>
-const searchInput = document.getElementById("addonSearch");
-const cards = document.querySelectorAll(".card");
-const noResults = document.getElementById("noResults");
+        <p>
+          Add useful off-hand features to your Minecraft Bedrock world.
+        </p>
 
-searchInput.addEventListener("input", function(){
-
-  const search = this.value.toLowerCase().trim();
-  let found = 0;
-
-  cards.forEach(function(card){
-
-    const name = card.dataset.name.toLowerCase();
-
-    if(name.includes(search)){
-      card.style.display = "";
-      found++;
-    }else{
-      card.style.display = "none";
-    }
-
-  });
-
-  noResults.style.display = found === 0 ? "block" : "none";
-
-});
+        <a class="btn" href="YOUR-DOWNLOAD-LINK">
+          ⬇️ Download
+        </a>
+      </div>
+    </div>
 </script>
 
 </body>
-</html> 
+</html>
