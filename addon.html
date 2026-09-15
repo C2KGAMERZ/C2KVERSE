@@ -20,111 +20,129 @@ body{
 }
 header{
   text-align:center;
-  padding:35px 15px 25px;
-  background:rgba(10,10,10,.65);
+  padding:30px 15px 20px;
+  background:rgba(0,0,0,.65);
   border-bottom:2px solid #555;
 }
 
 .logo{
   font-family:Impact,Arial Black,sans-serif;
-  font-size:48px;
+  font-size:46px;
   letter-spacing:4px;
-  color:white;
+  color:#e8e8e8;
   text-shadow:
     3px 3px 0 #111,
-    0 0 10px rgba(255,255,255,.3);
+    0 0 12px rgba(255,255,255,.25);
 }
 
 .subtitle{
-  margin-top:8px;
-  font-size:14px;
-  color:#bbb;
+  margin-top:7px;
+  font-size:13px;
+  color:#aaa;
   letter-spacing:2px;
 }
 
+.search-button{
+  margin-top:22px;
+  padding:11px 22px;
+  border:1px solid #777;
+  border-radius:8px;
+  background:#202020;
+  color:white;
+  font-size:16px;
+  font-weight:bold;
+  cursor:pointer;
+}
+
+.search-button:hover{
+  background:#333;
+}
+.search-area{
+  display:none;
+  max-width:650px;
+  margin:20px auto;
+}
+
+.search-area input{
+  width:100%;
+  padding:14px 18px;
+  background:#151515;
+  color:white;
+  border:2px solid #777;
+  border-radius:10px;
+  outline:none;
+  font-size:16px;
+}
+
+.search-area input:focus{
+  border-color:#aaa;
+}
 .container{
   width:92%;
   max-width:1000px;
   margin:25px auto;
 }
-.search-box{
-  margin:25px auto 30px;
-  max-width:650px;
-}
 
-.search-box input{
-  width:100%;
-  padding:15px 20px;
-  border:1px solid #666;
-  border-radius:10px;
-  outline:none;
-  background:rgba(20,20,20,.9);
-  color:white;
-  font-size:16px;
-  box-shadow:0 4px 15px rgba(0,0,0,.4);
-}
-
-.search-box input:focus{
-  border-color:#aaa;
-  box-shadow:0 0 12px rgba(255,255,255,.15);
-}
 .grid{
   display:grid;
   grid-template-columns:repeat(2,1fr);
-  gap:20px;
+  gap:18px;
 }
 
 .card{
-  background:rgba(18,18,18,.94);
+  background:rgba(20,20,20,.95);
   border:1px solid #555;
   border-radius:12px;
   overflow:hidden;
-  box-shadow:0 6px 18px rgba(0,0,0,.5);
+  box-shadow:0 5px 15px rgba(0,0,0,.6);
 }
 
 .card img{
   width:100%;
-  height:180px;
+  aspect-ratio:1/1;
   object-fit:cover;
   display:block;
 }
 
 .info{
-  padding:18px;
+  padding:14px;
 }
 
 .info h2{
-  font-size:21px;
-  margin-bottom:8px;
+  font-size:19px;
+  margin-bottom:7px;
 }
 
 .info p{
   color:#aaa;
-  font-size:14px;
-  line-height:1.5;
+  font-size:13px;
+  line-height:1.4;
 }
-.btn{
-  display:inline-block;
-  margin-top:15px;
-  padding:11px 18px;
-  background:#eee;
+.download{
+  display:block;
+  width:100%;
+  margin-top:12px;
+  padding:11px;
+  text-align:center;
+  background:#ddd;
   color:#111;
   text-decoration:none;
-  border-radius:7px;
+  border-radius:8px;
   font-weight:bold;
+  font-size:14px;
 }
 
-.btn:hover{
+.download:hover{
   background:#fff;
 }
 
 .no-results{
   display:none;
   text-align:center;
+  padding:35px 10px;
   color:#aaa;
-  padding:30px;
   font-size:16px;
-}  
+}
 </style>
 </head>
 
@@ -133,84 +151,107 @@ header{
 <header>
   <div class="logo">C2KGAMERZ</div>
   <div class="subtitle">MINECRAFT ADDONS</div>
+
+  <button class="search-button" onclick="toggleSearch()">
+    🔍 Search
+  </button>
+
+  <div class="search-area" id="searchArea">
+    <input
+      type="text"
+      id="addonSearch"
+      placeholder="Search addons..."
+      autocomplete="off"
+    >
+  </div>
 </header>
 
 <div class="container">
 
-  <div class="search-box">
-    <input
-      type="text"
-      id="addonSearch"
-      placeholder="🔍 Search addons..."
-      autocomplete="off"
-    >
+  <div class="grid" id="addonGrid">
+<div class="card" data-name="Off Hand">
+
+      <img src="YOUR-OFFHAND-IMAGE" alt="Off Hand">
+
+      <div class="info">
+        <h2>Off Hand</h2>
+
+        <p>
+          Off Hand addon for Minecraft Bedrock.
+        </p>
+
+        <a class="download" href="YOUR-OFFHAND-DOWNLOAD">
+          ⬇ Download
+        </a>
+      </div>
+
+    </div>
+
+
+    <div class="card" data-name="Bedrock Essentials+">
+
+      <img src="YOUR-BEDROCK-IMAGE" alt="Bedrock Essentials+">
+
+      <div class="info">
+        <h2>Bedrock Essentials+</h2>
+
+        <p>
+          Useful features for Minecraft Bedrock.
+        </p>
+
+        <a class="download" href="YOUR-BEDROCK-DOWNLOAD">
+          ⬇ Download
+        </a>
+      </div>
+
+    </div>
+</div>
+
+  <div class="no-results" id="noResults">
+    No addons found 😕
   </div>
-<div class="grid" id="addonGrid">
 
-    <div class="card" data-name="Bedrock Essentials+">
-      <img src="YOUR-IMAGE-URL" alt="Bedrock Essentials+">
+</div>
+<script>
 
-      <div class="info">
-        <h2>Bedrock Essentials+</h2>
+function toggleSearch(){
 
-        <p>
-          Useful features and improvements for Minecraft Bedrock.
-        </p>
+  const area = document.getElementById("searchArea");
 
-        <a class="btn" href="YOUR-DOWNLOAD-LINK">
-          ⬇️ Download
-        </a>
-      </div>
-    </div>
+  if(area.style.display === "block"){
+    area.style.display = "none";
+  }else{
+    area.style.display = "block";
+    document.getElementById("addonSearch").focus();
+  }
 
-    <div class="card" data-name="Off Hand">
-      <img src="YOUR-IMAGE-URL" alt="Off Hand">
+}
 
-      <div class="info">
-        <h2>Off Hand</h2>
+const searchInput = document.getElementById("addonSearch");
+const cards = document.querySelectorAll(".card");
+const noResults = document.getElementById("noResults");
 
-        <p>
-          Add useful off-hand features to your Minecraft Bedrock world.
-        </p>
+searchInput.addEventListener("input", function(){
 
-        <a class="btn" href="YOUR-DOWNLOAD-LINK">
-          ⬇️ Download
-        </a>
-      </div>
-    </div>
-<div class="grid" id="addonGrid">
+  const search = this.value.toLowerCase().trim();
+  let found = 0;
 
-    <div class="card" data-name="Bedrock Essentials+">
-      <img src="YOUR-IMAGE-URL" alt="Bedrock Essentials+">
+  cards.forEach(function(card){
 
-      <div class="info">
-        <h2>Bedrock Essentials+</h2>
+    const name = card.dataset.name.toLowerCase();
 
-        <p>
-          Useful features and improvements for Minecraft Bedrock.
-        </p>
+    if(name.includes(search)){
+      card.style.display = "";
+      found++;
+    }else{
+      card.style.display = "none";
+    }
 
-        <a class="btn" href="YOUR-DOWNLOAD-LINK">
-          ⬇️ Download
-        </a>
-      </div>
-    </div>
+  });
 
-    <div class="card" data-name="Off Hand">
-      <img src="YOUR-IMAGE-URL" alt="Off Hand">
+  noResults.style.display = found === 0 ? "block" : "none";
 
-      <div class="info">
-        <h2>Off Hand</h2>
-
-        <p>
-          Add useful off-hand features to your Minecraft Bedrock world.
-        </p>
-
-        <a class="btn" href="YOUR-DOWNLOAD-LINK">
-          ⬇️ Download
-        </a>
-      </div>
-    </div>
+});
 </script>
 
 </body>
