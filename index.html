@@ -2,156 +2,860 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+<meta name="viewport"
+content="width=device-width,initial-scale=1.0">
 <title>C2KVerse</title>
 
 <style>
 *{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
+ margin:0;
+ padding:0;
+ box-sizing:border-box;
 }
 
 html,body{
-  width:100%;
-  min-height:100%;
-  background:#000;
+ width:100%;
+ min-height:100%;
+ background:#000;
 }
 
 body{
-  display:flex;
-  justify-content:center;
-  overflow-x:hidden;
+ display:flex;
+ justify-content:center;
+ overflow-x:hidden;
+ font-family:Arial,sans-serif;
+ color:white;
 }
 
 .home{
-  position:relative;
-  width:100%;
-  max-width:1024px;
+ position:relative;
+ width:100%;
+ max-width:1024px;
 }
 
-.home img{
-  display:block;
-  width:100%;
-  height:auto;
+.hero{
+ position:relative;
+ width:100%;
+}
+
+.hero img{
+ display:block;
+ width:100%;
+ height:auto;
 }
 
 .link{
-  position:absolute;
-  display:block;
-  z-index:5;
+ position:absolute;
+ display:block;
+ z-index:5;
 }
 .link-subscribe{
-  left:33%;
-  top:56.5%;
-  width:34%;
-  height:5.5%;
+ left:33%;
+ top:56.5%;
+ width:34%;
+ height:5.5%;
+ border-radius:12px;
+ animation:realSubscribeGlow 1.2s infinite;
 }
 
 .link-addons{
-  left:3.5%;
-  top:66%;
-  width:21.5%;
-  height:24%;
+ left:3.5%;
+ top:66%;
+ width:21.5%;
+ height:24%;
 }
 
 .link-skins{
-  left:27%;
-  top:66%;
-  width:21.5%;
-  height:24%;
+ left:27%;
+ top:66%;
+ width:21.5%;
+ height:24%;
 }
 
 .link-textures{
-  left:50.5%;
-  top:66%;
-  width:21.5%;
-  height:24%;
+ left:50.5%;
+ top:66%;
+ width:21.5%;
+ height:24%;
 }
 
 .link-maps{
-  left:74.5%;
-  top:66%;
-  width:21.5%;
-  height:24%;
+ left:74.5%;
+ top:66%;
+ width:21.5%;
+ height:24%;
 }
-
 .link-youtube{
-  left:37.5%;
-  top:93.5%;
-  width:6%;
-  height:4%;
+ left:37.5%;
+ top:93.5%;
+ width:6%;
+ height:4%;
 }
 
 .link-instagram{
-  left:47%;
-  top:93.5%;
-  width:6%;
-  height:4%;
+ left:47%;
+ top:93.5%;
+ width:6%;
+ height:4%;
 }
 
 .link-discord{
-  left:56.5%;
-  top:93.5%;
-  width:6%;
-  height:4%;
-}
-
-.link-subscribe{
-  position:absolute;
-  animation:realSubscribeGlow 1.2s infinite;
-  border-radius:12px;
-  pointer-events:auto;
+ left:56.5%;
+ top:93.5%;
+ width:6%;
+ height:4%;
 }
 
 @keyframes realSubscribeGlow{
-  0%,100%{
-    box-shadow:
-      0 0 5px #55ff55,
-      0 0 10px #55ff55;
-  }
-  50%{
-    box-shadow:
-      0 0 10px #55ff55,
-      0 0 25px #55ff55,
-      0 0 40px #55ff55;
-  }
+ 0%,100%{
+  box-shadow:
+   0 0 5px #55ff55,
+   0 0 10px #55ff55;
+ }
+
+ 50%{
+  box-shadow:
+   0 0 10px #55ff55,
+   0 0 25px #55ff55,
+   0 0 40px #55ff55;
+ }
 }
-  
-</style>
+.premium{
+ position:relative;
+ margin-top:0;
+ padding:34px 16px 45px;
+ overflow:hidden;
+
+ background:
+ radial-gradient(
+  circle at 50% 18%,
+  rgba(255,205,65,.16),
+  transparent 28%
+ ),
+ radial-gradient(
+  circle at 15% 70%,
+  rgba(255,184,0,.08),
+  transparent 24%
+ ),
+ linear-gradient(
+  180deg,
+  #090805 0%,
+  #020202 55%,
+  #000 100%
+ );
+
+ border-top:2px solid
+ rgba(255,210,75,.45);
+
+ box-shadow:
+ inset 0 12px 45px
+ rgba(255,190,0,.07);
+}
+
+.premium:before{
+ content:"";
+ position:absolute;
+
+ width:260px;
+ height:260px;
+
+ left:50%;
+ top:110px;
+
+ transform:translateX(-50%);
+
+ border-radius:50%;
+
+ background:rgba(255,194,30,.07);
+
+ filter:blur(45px);
+
+ pointer-events:none;
+}
+.premium:after{
+ content:"";
+ position:absolute;
+ inset:0;
+
+ opacity:.25;
+
+ background-image:
+ radial-gradient(
+  circle,
+  rgba(255,214,91,.8) 0 1px,
+  transparent 1.5px
+ );
+
+ background-size:72px 72px;
+
+ animation:goldParticles 14s linear infinite;
+
+ pointer-events:none;
+}
+
+@keyframes goldParticles{
+ from{
+  background-position:0 0;
+ }
+
+ to{
+  background-position:0 72px;
+ }
+}
+
+.premium-content{
+ position:relative;
+ z-index:2;
+
+ max-width:900px;
+ margin:auto;
+
+ text-align:center;
+}
+.premium-kicker{
+ display:inline-block;
+ padding:6px 12px;
+
+ border:1px solid
+ rgba(255,211,77,.65);
+
+ border-radius:999px;
+
+ color:#f8d66b;
+
+ font-size:10px;
+ font-weight:900;
+ letter-spacing:3px;
+
+ background:rgba(0,0,0,.65);
+
+ box-shadow:
+ 0 0 18px
+ rgba(255,200,40,.12);
+}
+
+.premium-title{
+ margin-top:13px;
+
+ font-family:
+ Impact,
+ "Arial Black",
+ sans-serif;
+
+ font-size:
+ clamp(32px,8vw,58px);
+
+ letter-spacing:3px;
+
+ color:#ffe58a;
+
+ text-shadow:
+ 0 2px 0 #5d4300,
+ 0 0 8px rgba(255,204,51,.65),
+ 0 0 28px rgba(255,190,0,.35);
+
+ animation:
+ goldShimmer 2.7s ease-in-out infinite;
+}
+@keyframes goldShimmer{
+ 0%,100%{
+  filter:brightness(1);
+ }
+
+ 50%{
+  filter:brightness(1.25);
+ }
+}
+
+.premium-subtitle{
+ margin:9px auto 22px;
+
+ max-width:650px;
+
+ color:#c8b98b;
+
+ font-size:13px;
+
+ line-height:1.55;
+
+ letter-spacing:1px;
+}
+
+.vault{
+ position:relative;
+
+ margin:0 auto;
+
+ max-width:650px;
+ min-height:390px;
+
+ padding:24px 18px;
+
+ display:flex;
+ flex-direction:column;
+ align-items:center;
+ justify-content:center;
+
+ border:
+ 1px solid
+ rgba(255,205,65,.48);
+
+ border-radius:20px;
+
+ background:
+ linear-gradient(
+ 145deg,
+ rgba(35,28,10,.94),
+ rgba(4,4,4,.97)
+ );
+box-shadow:
+ 0 0 0 1px
+ rgba(255,220,100,.06),
+
+ 0 0 35px
+ rgba(255,190,0,.13),
+
+ inset 0 0 35px
+ rgba(255,190,0,.07);
+
+ transition:
+ .8s ease;
+}
+
+.vault:before{
+ content:"";
+
+ position:absolute;
+ inset:8px;
+
+ border:
+ 1px solid
+ rgba(255,216,91,.13);
+
+ border-radius:14px;
+
+ pointer-events:none;
+}
+
+.lock{
+ position:relative;
+
+ width:118px;
+ height:118px;
+
+ margin-bottom:18px;
+
+ display:flex;
+ align-items:center;
+ justify-content:center;
+
+ border:
+ 2px solid #d6a928;
+
+ border-radius:24px;
+
+ background:
+ linear-gradient(
+ 145deg,
+ #2b220d,
+ #080704
+ );
+
+ box-shadow:
+ 0 0 18px
+ rgba(255,198,35,.35),
+
+ inset 0 0 22px
+ rgba(255,201,46,.13);
+
+ animation:
+ lockFloat 3s ease-in-out infinite;
+
+ z-index:4;
+}
+.lock:before{
+ content:"";
+
+ position:absolute;
+
+ width:48px;
+ height:48px;
+
+ top:-25px;
+
+ border:
+ 9px solid #d6a928;
+
+ border-bottom:0;
+
+ border-radius:
+ 30px 30px 0 0;
+
+ filter:
+ drop-shadow(
+ 0 0 7px
+ rgba(255,207,65,.45)
+ );
+}
+
+.lock:after{
+ content:"";
+
+ position:absolute;
+
+ width:12px;
+ height:20px;
+
+ border-radius:8px;
+
+ background:#e6c45b;
+
+ box-shadow:
+ 0 0 10px
+ rgba(255,220,90,.45);
+}
+
+@keyframes lockFloat{
+ 0%,100%{
+  transform:
+   translateY(0)
+   rotate(0deg);
+ }
+
+ 50%{
+  transform:
+   translateY(-7px)
+   rotate(.7deg);
+ }
+}
+.vault.unlocking .lock{
+ animation:
+  lockShake .12s linear 7,
+  lockFlash .6s ease forwards;
+}
+
+@keyframes lockShake{
+ 0%{transform:translateX(0) rotate(0);}
+ 25%{transform:translateX(-7px) rotate(-3deg);}
+ 50%{transform:translateX(7px) rotate(3deg);}
+ 75%{transform:translateX(-5px) rotate(-2deg);}
+ 100%{transform:translateX(0) rotate(0);}
+}
+
+@keyframes lockFlash{
+ 0%{
+  filter:brightness(1);
+ }
+
+ 55%{
+  filter:
+   brightness(3)
+   drop-shadow(0 0 25px #ffd84d);
+ }
+
+ 100%{
+  opacity:0;
+  transform:
+   scale(1.4)
+   rotate(8deg);
+ }
+}
+
+.vault.unlocking:after{
+ content:"";
+
+ position:absolute;
+ inset:0;
+
+ background:
+ radial-gradient(
+  circle,
+  rgba(255,231,130,.95),
+  rgba(255,190,0,.35),
+  transparent 62%
+ );
+
+ animation:
+ vaultFlash .9s ease forwards;
+
+ pointer-events:none;
+
+ z-index:3;
+}
+
+@keyframes vaultFlash{
+ 0%{opacity:0;}
+ 35%{opacity:1;}
+ 100%{opacity:0;}
+}
+.vault.opened{
+ border-color:#f4cd55;
+
+ box-shadow:
+ 0 0 25px #b47d16,
+ 0 0 70px rgba(255,201,45,.35),
+ inset 0 0 60px rgba(255,203,55,.16);
+}
+
+.vault.opened .lock{
+ opacity:0;
+ pointer-events:none;
+}
+
+.vault.opened .vault-heading{
+ color:#fff3bc;
+
+ text-shadow:
+ 0 0 10px #ffd85c,
+ 0 0 30px #d79b1d;
+}
+
+.vault.opened .premium-area{
+ display:block;
+}
+.lock-label{
+ color:#f5d46b;
+
+ font-size:11px;
+ font-weight:900;
+
+ letter-spacing:2px;
+
+ margin-bottom:9px;
+}
+
+.vault-heading{
+ font-family:
+ Impact,
+ "Arial Black",
+ sans-serif;
+
+ font-size:28px;
+
+ letter-spacing:2px;
+
+ color:#fff0b2;
+
+ transition:.5s;
+}
+
+.vault-text{
+ margin-top:8px;
+
+ max-width:470px;
+
+ color:#a99b78;
+
+ font-size:12px;
+
+ line-height:1.5;
+}
+
+.premium-actions{
+ margin-top:20px;
+
+ display:flex;
+ flex-wrap:wrap;
+
+ justify-content:center;
+
+ gap:10px;
+}
+.gold-btn{
+ border:
+ 1px solid #e2bd45;
+
+ border-radius:10px;
+
+ padding:12px 18px;
+
+ color:#120e02;
+
+ background:
+ linear-gradient(
+ 180deg,
+ #ffe68a,
+ #c99618
+ );
+
+ font-weight:900;
+
+ cursor:pointer;
+
+ box-shadow:
+ 0 0 18px
+ rgba(255,199,45,.22);
+
+ transition:.2s;
+}
+
+.gold-btn:hover{
+ transform:translateY(-1px);
+
+ box-shadow:
+ 0 0 12px
+ rgba(255,218,91,.55),
+
+ 0 0 28px
+ rgba(255,186,0,.28);
+}
+
+.dark-btn{
+ border:
+ 1px solid
+ rgba(255,207,70,.35);
+
+ border-radius:10px;
+
+ padding:12px 18px;
+
+ color:#e6cc78;
+
+ background:#0c0b08;
+
+ font-weight:800;
+
+ cursor:pointer;
+}
+
+.status{
+ display:none;
+
+ margin-top:16px;
+
+ padding:11px 14px;
+
+ max-width:500px;
+
+ border-radius:10px;
+
+ border:
+ 1px solid
+ rgba(255,211,83,.24);
+
+ background:
+ rgba(255,195,30,.05);
+
+ color:#d7c58d;
+
+ font-size:12px;
+
+ line-height:1.45;
+}
+.spinner{
+ display:inline-block;
+
+ width:12px;
+ height:12px;
+
+ margin-right:6px;
+
+ vertical-align:-2px;
+
+ border:
+ 2px solid
+ rgba(255,224,130,.25);
+
+ border-top-color:#f3ce5c;
+
+ border-radius:50%;
+
+ animation:spin .8s linear infinite;
+}
+
+@keyframes spin{
+ to{
+  transform:rotate(360deg);
+ }
+}
+
+.premium-area{
+ display:none;
+ margin-top:24px;
+
+ animation:
+ vaultIn .7s ease both;
+}
+
+@keyframes vaultIn{
+ from{
+  opacity:0;
+  transform:translateY(20px);
+ }
+
+ to{
+  opacity:1;
+  transform:translateY(0);
+ }
+}
+
+.premium-grid{
+ display:grid;
+
+ grid-template-columns:
+ repeat(2,1fr);
+
+ gap:12px;
+}
+.premium-card{
+ min-height:125px;
+ padding:17px;
+
+ text-align:left;
+
+ border-radius:14px;
+
+ border:
+ 1px solid
+ rgba(255,210,73,.32);
+
+ background:
+ linear-gradient(
+ 145deg,
+ #191407,
+ #070604
+ );
+
+ box-shadow:
+ 0 0 18px
+ rgba(255,190,0,.07);
+}
+
+.premium-card h3{
+ color:#ffe69a;
+ font-size:18px;
+}
+
+.premium-card p{
+ margin-top:7px;
+ color:#a99b78;
+ font-size:12px;
+ line-height:1.4;
+}
+
+.premium-badge{
+ display:inline-block;
+
+ margin-top:10px;
+
+ padding:4px 7px;
+
+ border-radius:6px;
+
+ font-size:9px;
+ font-weight:900;
+
+ color:#171000;
+ background:#e5bd4d;
+}
+
+.coming{
+ opacity:.7;
+}
+
+.coming .premium-badge{
+ background:#51451f;
+ color:#d8c278;
+}
+
+@media(max-width:600px){
+ .premium{
+  padding:28px 12px 38px;
+ }
+
+ .premium-grid{
+  grid-template-columns:1fr 1fr;
+ }
+
+ .premium-card{
+  padding:13px;
+ }
+}
+ </style>
 </head>
 
 <body>
 
 <div class="home">
 
-  <img src="hp.jpg" alt="C2KVerse Home">
+<div class="hero">
 
-  <a class="link link-subscribe"
-     href="https://www.youtube.com/@CREEPERX2K"
-     target="_blank"></a>
+<img src="hp.jpg" alt="C2KVerse Home">
 
-  <a class="link link-addons"
-     href="addon.html"></a>
+<a class="link link-subscribe"
+href="https://www.youtube.com/@CREEPERX2K"
+target="_blank"></a>
 
-  <a class="link link-skins" href="#"></a>
+<a class="link link-addons"
+href="addon.html"></a>
 
-  <a class="link link-textures" href="#"></a>
+<a class="link link-skins" href="#"></a>
+<a class="link link-textures" href="#"></a>
+<a class="link link-maps" href="#"></a>
 
-  <a class="link link-maps" href="#"></a>
+<a class="link link-youtube"
+href="https://www.youtube.com/@CREEPERX2K"
+target="_blank"></a>
 
-  <a class="link link-youtube"
-     href="https://www.youtube.com/@CREEPERX2K"
-     target="_blank"></a>
-
-  <a class="link link-instagram" href="#"></a>
-
-  <a class="link link-discord" href="#"></a>
+<a class="link link-instagram" href="#"></a>
+<a class="link link-discord" href="#"></a>
 
 </div>
 
-</body>
-</html>
+<section class="premium">
 
+<div class="premium-content">
 
+<div class="premium-kicker">
+PART 05 • EXCLUSIVE
+</div>
+
+<h1 class="premium-title">
+C2KVERSE PREMIUM
+</h1>
+
+<p class="premium-subtitle">
+Enter the Premium Vault — exclusive addons,
+future drops and premium content kept separate
+from the normal C2KVerse library.
+</p>
+
+<div class="vault" id="vault">
+
+<div class="lock"></div>
+
+<div class="lock-label">
+PREMIUM ACCESS
+</div>
+
+<h2 class="vault-heading">
+PREMIUM VAULT
+</h2>
+
+<p class="vault-text">
+Unlock the exclusive C2KVerse Premium area.
+</p>
+
+<div class="premium-actions">
+
+<button class="gold-btn"
+onclick="startVerification()">
+UNLOCK PREMIUM
+</button>
+
+<button class="dark-btn"
+onclick="location.reload()">
+RESET
+</button>
+
+</div>
+
+<div class="status" id="status"></div>
+
+<div class="premium-area" id="premiumArea">
+
+<div class="premium-grid">
+
+<div class="premium-card">
+<h3>⚔️ Premium Addons</h3>
+<p>Exclusive pre 
